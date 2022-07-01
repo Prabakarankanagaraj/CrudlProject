@@ -29,6 +29,12 @@ public class Mobile {
 				+ ", getCost()=" + getCost() + ", getmegaArms()=" + getMegaArms() + ", getClass()=" + getClass()
 				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
+	
+	public Mobile() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public Mobile(int mobId, String brand, String model, int cost, int megaArms) {
 		super();
 		this.mobId = mobId;
