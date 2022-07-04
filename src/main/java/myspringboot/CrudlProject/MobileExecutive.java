@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,6 +16,18 @@ import org.springframework.web.bind.annotation.RestController;
 public class MobileExecutive {
 	@Autowired
 	MobileService service;
+	
+	@PutMapping("/byups/{change}")
+	public void callingUpdate(@PathVariable("change") String change) {
+		service.Makeupdate(change);
+	}
+	
+	
+	@PutMapping("/up")
+	public Mobile callingUp(@RequestBody Mobile Up) {
+		return service.NewOne(Up);
+		
+	}
 	
 	@DeleteMapping("/del")
 	public String callingMakeDelete(@RequestBody Mobile te) {

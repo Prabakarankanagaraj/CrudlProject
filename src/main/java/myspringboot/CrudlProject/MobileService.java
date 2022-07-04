@@ -15,7 +15,10 @@ public class MobileService {
 		String msg=tel.getBrand()+"has deleted";
 		obj.delete(tel);
 		return msg;
-		
+	
+	}
+	public void Makeupdate(String beta){
+		obj.updatePriceByBrand(beta);
 	}
 	
 	public List<String> makeFetchByMegaArms(int alpha){
