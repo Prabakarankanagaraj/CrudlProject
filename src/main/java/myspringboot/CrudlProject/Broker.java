@@ -18,6 +18,14 @@ public interface Broker extends CrudRepository<Mobile,Integer> {
 	
 	@Transactional
 	@Modifying
+	@Query("delete from Mobile where brand like %:own%")
+	public void deleteAllByCustomize(String own);
+	
+	@Query("select model from Mobile where brand like %:tp%")
+	public List<String> findAllByTypesLikes(String tp);
+	
+	@Transactional
+	@Modifying
 	@Query("update Mobile set cost=cost*0.500 where brand=:bnnd")
 	public void updatePriceByBrand(String bnnd);
 	

@@ -17,6 +17,16 @@ public class MobileExecutive {
 	@Autowired
 	MobileService service;
 	
+	@DeleteMapping("/delall/{tp}")
+	public List<String> callingDeleteMany(@PathVariable("tp") String tp){
+		return service.makeDeleteCustom(tp);
+		
+	}
+	@DeleteMapping("/delid/{pos}")
+	public String callingDeleteId(@PathVariable("pos") int pos) {
+		return service.makeDeleteKey(pos);
+	}
+	
 	@PutMapping("/byups/{change}")
 	public void callingUpdate(@PathVariable("change") String change) {
 		service.Makeupdate(change);

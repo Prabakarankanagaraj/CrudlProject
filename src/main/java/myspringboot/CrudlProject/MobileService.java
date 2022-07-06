@@ -11,6 +11,20 @@ import org.springframework.stereotype.Service;
 public class MobileService {
 	@Autowired
 	Broker obj;
+	 
+	public List<String> makeDeleteCustom(String tp){
+		List<String> tmp=obj.findAllByTypesLikes(tp);
+		obj.deleteAllByCustomize(tp);
+		return tmp;
+	}
+	
+	public String makeDeleteKey(int key) {
+		Mobile t=obj.findById(key).orElse(null);
+		String msg=t.getModel()+" has deleted ";
+		obj.deleteById(key);
+		return msg;
+	}
+	
 	public String makeDelete(Mobile tel) {
 		String msg=tel.getBrand()+"has deleted";
 		obj.delete(tel);
