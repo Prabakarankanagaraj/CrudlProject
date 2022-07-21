@@ -35,8 +35,8 @@ public class MobileService {
 		obj.updatePriceByBrand(beta);
 	}
 	
-	public List<String> makeFetchByMegaArms(int alpha){
-		return obj.findAllByMegaArms(alpha);
+	public List<String> makeFetchByMegaArms(int string){
+		return obj.findAllByMegaArms(string);
 	}
 	
 	public List<Mobile> makeFetch(String a,int b){
