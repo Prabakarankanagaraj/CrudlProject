@@ -63,7 +63,7 @@ class CrudlProjectApplicationTests {
 		Mobile m4=new Mobile(102,"realme","z11",6500,7500);
 		
 		when(repo.findAllByBrandAndCost("realme", 6500)).thenReturn(Stream.of(m3,m4).collect(Collectors.toList()));
-		assertNotSame(m4, Service.makeFetch("realme", 6500).get(1))	;
+		assertSame(m4, Service.makeFetch("realme", 6500).get(1))	;
 	}
 	
 	@Test
@@ -73,7 +73,7 @@ class CrudlProjectApplicationTests {
 		Mobile m3=new Mobile(102,"realme","y21",5500,7500);
 		
 		when(repo.findAllByCost(5500)).thenReturn(Stream.of(m1,m3).collect(Collectors.toList()));
-		assertNotEquals(m1, Service.makeReadCost(5500).get(0));
+		assertEquals(m1, Service.makeReadCost(5500).get(0));
 	}
 	
 	@Test
