@@ -21,7 +21,6 @@ public class Mobile {
 	@Column(name="mobile_megaArms")
 	private int megaArms; 
 	
-	
 	@Override
 	public String toString() {
 		return "Mobile [mobId=" + mobId + ", brand=" + brand + ", model=" + model + ", cost=" + cost + ", megaArms="
